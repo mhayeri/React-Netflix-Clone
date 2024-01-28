@@ -16,8 +16,6 @@ const MovieRow = ({ title, url }) => {
         fetchMovies();
     }, [url]);
 
-    console.log(movies);
-
     return (
         <>
             <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
