@@ -1,10 +1,16 @@
 import React from "react";
 import Backdrop from "../components/Backdrop";
+import MovieRow from "../components/MovieRow";
+
+import { movieRows } from "../utils/MovieRow";
 
 const Home = () => {
     return (
         <>
             <Backdrop />
+            {movieRows.map(({ title, url }) => (
+                <MovieRow key={title} title={title} url={url} />
+            ))}
         </>
     );
 };
