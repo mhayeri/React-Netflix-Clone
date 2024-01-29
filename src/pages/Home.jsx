@@ -8,8 +8,8 @@ const Home = () => {
     return (
         <>
             <Backdrop />
-            {movieRows.map(({ title, url }) => (
-                <MovieRow key={title} title={title} url={url} />
+            {movieRows.map(({ id, title, url }) => (
+                <MovieRow key={id} rowId={id} title={title} url={url} />
             ))}
         </>
     );
