@@ -3,7 +3,7 @@ import axios from "axios";
 import Movie from "./Movie";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const MovieRow = ({ title, url }) => {
+const MovieRow = ({ rowId, title, url }) => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -17,12 +17,12 @@ const MovieRow = ({ title, url }) => {
     }, [url]);
 
     const slideLeft = () => {
-        const slider = document.getElementById("slider");
+        const slider = document.getElementById("slider" + rowId);
         slider.scrollLeft = slider.scrollLeft - 500;
     };
 
     const slideRight = () => {
-        const slider = document.getElementById("slider");
+        const slider = document.getElementById("slider" + rowId);
         slider.scrollLeft = slider.scrollLeft + 500;
     };
 
@@ -36,7 +36,7 @@ const MovieRow = ({ title, url }) => {
                     onClick={slideLeft}
                 />
                 <div
-                    id={"slider"}
+                    id={"slider" + rowId}
                     className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
                 >
                     {movies.map((movie, id) => {
